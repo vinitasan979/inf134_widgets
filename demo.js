@@ -7,7 +7,7 @@ import {radioToolKit} from './mytoolkit.js';
 
 // Implement a MyToolkit Button
 var btn = new MyToolkit.Button;
-btn.move(20,50);
+btn.move(5,10);
 btn.changeText("Click to grade A")
 btn.onclick(function(e){
 	console.log(e);
@@ -15,7 +15,7 @@ btn.onclick(function(e){
 
 //Implement a Text ToolKit  
 var tbox= new textToolKit.textBox;
-tbox.move(20,30);
+tbox.move(10,50);
 
 
 
@@ -28,7 +28,7 @@ r.push(["Radiobutton 4", false])
 r.push(["Radiobutton 5", true])
 
 let rb1 = new radioToolKit.radioBtns(r,5);
-rb1.move(10,5)
+rb1.move(20,20)
 
 //Implment  a checkbox 
 var cbox = new CheckToolKit.checkBoxes

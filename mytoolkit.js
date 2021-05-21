@@ -2,13 +2,19 @@
 
 import { SVG } from './svg.min.js';
 
+// var frame;
+// SVG.on(document,'DOMContentLoaded',function(){
+//     var drawm = SVG().addTo('body').size('1000px','1000px');
+//     frame = drawm.group();
+//     frame.rect(500,500).stroke("orange").fill("white")
+// })
 
 /** Function to create button widget  */ 
 var MyToolkit = (function () {
     /**
      */
     var Button = function () {
-        var draw = SVG().addTo('body').size('60%', '100%');
+        var draw = SVG().addTo('body').size('300px', '300px');
         var nested = draw.group()
         var rect = nested.rect(150, 50).fill('white').stroke({ color: 'black', width: 2 })
         var textbx = nested.text("click me")
@@ -17,7 +23,6 @@ var MyToolkit = (function () {
         /**code to change Text Font  */
         textbx.font({
             family: 'Helvetica'
-
 
         })  
         var clickEvent = null
@@ -34,6 +39,8 @@ var MyToolkit = (function () {
             if (clickEvent != null)
                 clickEvent(event)
         })
+        //nested.move(100,100)
+        
         return {
             /**
              * @param  {Number} x - x coord
@@ -74,7 +81,7 @@ var MyToolkit = (function () {
 /** Text Box Code*/
 var textToolKit = (function () {
     var textBox = function () {
-        var draw1 = SVG().addTo('body').size('100%', '100%')
+        var draw1 = SVG().addTo('body').size('500px', '500px')
         var nested = draw1.nested()
         var words = "" //inital string is empty 
         var group = nested.group()
@@ -152,7 +159,7 @@ var radioToolKit = (function () {
         var y = 30
         var legal = true //not more than one button is checked 
         var btnArray = new Array(); //array of radio buttons 
-        var draw2 = SVG().addTo('body').size('100%', '100%')
+        var draw2 = SVG().addTo('body').size('500px', '500px')
         var group = draw2.group()
         var chosenBtn = draw2.circle(19).fill('pink').move(3, 33) // smaller button to show selected radio button 
         var hoverbtn = draw2.circle(25).fill('white').stroke({ color: "purple", width: 5 }).y(30) //larger button to outline hovered radio button 
@@ -229,7 +236,7 @@ var radioToolKit = (function () {
 /** Function to implement checkboxes */
 var CheckToolKit = (function () {
     var checkBoxes = function () {
-        var draw3 = SVG().addTo('body').size('100%', '100%')
+        var draw3 = SVG().addTo('body').size('200px', '200px')
         var group = draw3.group()
         var box = group.rect(30, 30).fill('white').stroke({ color: "black", width: 2 })
         var text = group.text("Custom Text").x(35)
@@ -310,7 +317,7 @@ var CheckToolKit = (function () {
 var ProgressBarToolkit = (function () {
 
     var progressBar = function () {
-        var draw4 = SVG().addTo('body').size('100%', '100%')
+        var draw4 = SVG().addTo('body').size('300px', '300px')
         var group = draw4.group()
         var outerBox = group.rect(250, 20).fill('white').stroke({ color: "black" })
         var innerBox = group.rect(0, 20).fill('purple') //inital state is 0 till user specfies 
@@ -367,7 +374,7 @@ var ProgressBarToolkit = (function () {
 
 var ScrollbarToolKit = (function () {
     var scrollBar = function () {
-        var draw5 = SVG().addTo('body').size('100%', '100%')
+        var draw5 = SVG().addTo('body').size('300px', '300px')
         var group = draw5.group()
         var bar = group.rect(10, 200).fill('white').stroke({ color: "black" })
         var scroller = group.rect(10, 50).fill("purple").stroke({ color: "black" }).y(bar.height() / 2)
@@ -465,7 +472,7 @@ var ToggleToolKit = (function () {
      * @param  {String} state2
      */
     var toggleBtn = function (state1, state2) {
-        var draw6 = SVG().addTo('body').size('100%', '100%')
+        var draw6 = SVG().addTo('body').size('500px', '500px')
         var group = draw6.group()
         var outer = group.rect(80, 30).fill("purple").stroke({ color: "black", width: 1 }) //main box 
         var inner = group.rect(30, 30).fill("white").stroke({ color: "black", width: 1 }) //toggle switch 
